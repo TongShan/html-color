@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+
+<pre>
+html: Hyper text makeup language
+<html> 文本描述 </html>
+<body> 可见的页面内容 </body>( bgcolor="blue")
+<h1> 标题 </h1> (h = heading)( align="center"|"left"|"right")
+<p> 段落 </p> (p=paragraph)
+<a href="网址" target="_blank">链接</a>(target在新的窗口打开)
+(target="_top"跳出框架)
+<a name="label">锚（显示在页面上的文本）</a>(锚的名字可以任取)
+<img src="*.jpg" width="*" height="*" /> (align="bottom"|"middle"|"top"|"left"|"right")
+<hr />hr标签定义水平线
+<!-- 注释 -->
+<br />不产生新的段落进行换行
+<b> 粗体 </b> (bold)
+<strong> 加重语气，粗体 </strong> (strong)
+<em> 着重文字，斜体 </em> (emphasized)
+<i> 斜体 </i> (italic)
+<small> 小号字体 </small>
+<big> 大号字体 </big>
+<sup> 上标 </sup>
+<sub> 下标 </sub>
+<pre> 预格式文本 </pre> (pre保留了空格和换行，适合显示代码)
+ <code> Computer code </code>
+ <kbd> Keyboard input </kbd>
+ <tt> Teletype text </tt>
+ <samp> Sample text </samp>
+ <var> Computer variable </var>
+ <address> 地址 </address>
+ <abbr title="etcetera">etc.</abbr>(缩写)
+ <acronym title="World Wide Web">WWW</acronym>（首字母缩写）
+ <bdo dir="rtl"> 从右向左输出 </bdo> (bdo=bi-directional override, rtl = right to left)
+ <blockquote>长引用</blockquote>
+ <q>短引用</q>
+ <del>定义删除字</del>
+ <ins>下划线，定义插入字</ins>
+ 
+ html格式化：
+ <head>
+ <style type="test/css">
+ h1 {color: red}
+ p {color: blue}
+ </style>
+ </head>
+ 
+ 
+标签	描述
+<style>	定义样式定义。
+<link>	定义资源引用。
+<div>	定义文档中的节或区域（块级）。
+<span>	定义文档中的行内的小块或区域。
+<font>	规定文本的字体、字体尺寸、字体颜色。不赞成使用。请使用样式。
+<basefont>	定义基准字体。不赞成使用。请使用样式。
+<center>	对文本进行水平居中。不赞成使用。请使用样式。
+
+表格：
+<table border="*" cellpadding="单元格边距*" cellspacing="单元格边距*">
+<caption>标题</caption>
+<tr>
+<th>表头</th>(<th colspan="*"合并行单元格 rowspan="*"合并列)
+</tr>
+<tr>
+<td>table data</td>
+<td>table row</td>
+</tr>
+<tr>
+<td>&nbsp;</td>(避免空的单元格边框没有显示:no-breaking space)
+<tr>
+<td>row2, cell2</td>
+</tr>
+</table>
+<ul><li>列表</li></ul>
+ul:无序列表，type="disc"实心圆，type="circle"空心圆，type=”square“方块
+ol：有序列表，默认从1开始,可以start定义开始序号：<ol stat="50">
+ol:默认为数字列表，type="A"大写字母列表，type="a"小写字母，type=”I“大写罗马字母，type="i"小写罗马字母。
+dl:自定义列表，列表项以“dt”开始，列表项的定义以“dd”开始。
+</pre>
+
+</body>
+</html>
