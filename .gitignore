@@ -1,0 +1,43 @@
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+*.desktop
+*.py
+*.public
+
+# My configurations:
+db.ini
+deploy_key_rsa
+.*
+*/
+"*
+*"
+*.py~
+*.txt
+*.txt~
+*.html
+*.html~
+*.jpg
+*.png
+*.gif
+*.bng
+*.jpeg
+
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
