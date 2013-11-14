@@ -26,7 +26,13 @@ deploy_key_rsa
 *.gif
 *.bng
 *.jpeg
-
+*.wav
+*.mp3
+*.mp4
+*.ogg
+*.avi
+*.rm
+*.rmbv
 
 # Windows:
 Thumbs.db
