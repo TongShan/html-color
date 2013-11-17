@@ -1,4 +1,6 @@
-mport urllib2
+#coding:utf8
+
+import urllib2
 import re
 import time
 
@@ -7,62 +9,63 @@ f=urllib2.urlopen('http://movie.douban.com/tag/?view=cloud').read()
 n1=f.find('007')
 n2=f.find('宗教')        #n1是第一个标签，n2是第二个标签，利用这两个标签定位标签们在f中的位置
 f1=f[(n1-4):(n2+10)]    #去掉标签旁边的杂质
-             f2=re.findall('\>\S{1,}?\<',f1)         #初步抓取标签
-             movie_tags=[]   #movie_tags为电影标签
-             for n in f2:
-                 n=n[1:-1]
-                     movie_tags.append(n)
+f2=re.findall('\>\S{1,}?\<',f1)         #初步抓取标签
+movie_tags=[]   #movie_tags为电影标签
+for n in f2:
+    n=n[1:-1]
+    movie_tags.append(n)
 
 #抓取每个标签打开后的网页地址
-    class Movie_list:
-            def __init__(self):
-                        self.url1='http://movie.douban.com/tag/' 
-                            def request_open(self,n1,n2): #n1是标签list中的序号，n2是页码
-                                                                   self.url2='?start='+str(n2*20)+'&type=T'
-                                                                           self.page1=urllib2.urlopen(self.url1+movie_tags[n1]+self.url2).read()
-            return self.page1 #点击标签打开后的页面地址
+class Movie_list:
+    def __init__(self):
+        self.url1='http://movie.douban.com/tag/' 
+    
+    def request_open(self,n1,n2): #n1是标签list中的序号，n2是页码
+        self.url2='?start='+str(n2*20)+'&type=T'
+        self.page1=urllib2.urlopen(self.url1+movie_tags[n1]+self.url2).read()
+        return self.page1 #点击标签打开后的页面地址
                     
                 
 
 #抓取电影列表的页码数
-            class Next_page:
-                    def __init__(self):
-                                self.url1='http://movie.douban.com/tag/'
-                                    def np(self,n1):
-                                                self.page1=urllib2.urlopen(self.url1+movie_tags[n1]).read()
-                                                        self.url2=re.findall('amp.*\d{1,2}',self.page1)
-                                                                if self.url2:
-                                                                            self.num2=self.url2[-1][13:]
-                                                                                        if int(self.num2)<50 or int(self.num2)==50:
-                                                                                                        return int(self.num2)
-                else:
-                                return 50       #电影列表页数超过50页则只扫描前50页
-                                        else:
-                                                    return 1
+class Next_page:
+    def __init__(self):
+        self.url1='http://movie.douban.com/tag/'
+      
+    def np(self,n1):
+        self.page1=urllib2.urlopen(self.url1+movie_tags[n1]).read()
+        self.url2=re.findall('amp.*\d{1,2}',self.page1)
+        if self.url2:
+            self.num2=self.url2[-1][13:]
+        if int(self.num2)<50 or int(self.num2)==50:
+            return int(self.num2)
+        else:
+            return 50       #电影列表页数超过50页则只扫描前50页
+        else:
+            return 1
 
                                                     movie_list=Movie_list()
-    movie=[]
+movie=[]
 
 
 #抓取电影信息（名字，评价人数，排名，地址）
-    class Movie_info:
-            def __init__(self):
-                        pass
-                            def m(self,n1,n2):
-                                    # 抓取每部电影的电影名称
-                                        self.movie_name2=[]
-                                                self.movie_name1=re.findall('title="\S{1,}?"',movie_list.request_open(n1,n2))
-                                                        for x in range(len(self.movie_name1)-1):
-                                                                        self.movie_name2.append(self.movie_name1[x][7:-1]) 
+class Movie_info:
+    def __init__(self):
+        pass
+    def m(self,n1,n2): # 抓取每部电影的电影名称
+        self.movie_name2=[]
+        self.movie_name1=re.findall('title="\S{1,}?"',movie_list.request_open(n1,n2))
+    for x in range(len(self.movie_name1)-1):
+        self.movie_name2.append(self.movie_name1[x][7:-1]) 
                                                                             
                                                                             # 抓取每部电影的评价人数
                                                                                 self.movie_comment2=[]
                                                                                         self.movie_comment1=re.findall('span class=\"pl.*评价|span class=\"pl.*上映',movie_list.request_open(n1,n2))
                                                                                                 for s in self.movie_comment1:
-                                                                                                            if re.findall('\d{1,}',s):
-                                                                                                                                self.movie_comment2.append(re.findall('\d{1,}',s)[0])
-                                                                                                                                            else:
-                                                                                                                                                            self.movie_comment2.append('0')
+    if re.findall('\d{1,}',s):
+        self.movie_comment2.append(re.findall('\d{1,}',s)[0])
+    else:
+        self.movie_comment2.append('0')
 
                                                                                                                                                                 # 抓取每部电影的评分
                                                                                                                                                                     self.movie_rating2=[]
