@@ -1,0 +1,279 @@
+CSS 选择器参考手册
+选择器  描述
+[attribute] 用于选取带有指定属性的元素。
+[attribute=value]   用于选取带有指定属性和值的元素。
+[attribute~=value]  用于选取属性值中包含指定词汇的元素。
+[attribute|=value]  用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。
+[attribute^=value]  匹配属性值以指定值开头的每个元素。
+[attribute$=value]  匹配属性值以指定值结尾的每个元素。
+[attribute*=value]  匹配属性值中包含指定值的每个元素。
+
+-------------------------------------------------
+外部样式表
+当样式需要应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，你可以通过改变一个文件来改变整个站点的外观。每个页面使用 <link> 标签链接到样式表。<link> 标签在（文档的）头部：
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
+
+--------------------------------------------------
+内部样式表
+当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 <style> 标签在文档头部定义内部样式表，就像这样:
+<head>
+<style type="text/css">
+  hr {color: sienna;}
+  p {margin-left: 20px;}
+  body {background-image: url("images/back40.gif");}
+</style>
+</head>
+
+--------------------------------------------------
+border-style的取值
+
+none: 无样式
+hidden: 除了同表格的边框发生冲突的时候,其它同none
+dotted: 点划线
+dashed: 虚线
+solid: 实线
+double: 双线,两条线加上中间的空白等于border-width的取值
+groove: 槽状
+ridge: 脊状,和groove相反
+inset: 凹陷
+outset:凸出,和inset相反
+
+--------------------------------------------------
+background:
+
+1.背景色：background-color:
+2.背景图像：background-image: url(url地址)；
+3.背景重置：background-repeat: repeat-x; repeat-y; no-repeat;
+4.背景定位：background-position: center(50%,50%), bottom, left, right;
+5.背景关联：background-attachment: fixed, scroll(default);
+
+---------------------------------------------------
+CSS文本
+1.缩进文本：text-indent: *em;
+使用百分比值
+text-indent 可以使用所有长度单位，包括百分比值。
+百分数要相对于缩进元素父元素的宽度。换句话说，如果将缩进值设置为 20%，所影响元素的第一行会缩进其父元素宽度的 20%。
+在下例中，缩进值是父元素的 20%，即 100 个像素：
+div {width: 500px;}
+p {text-indent: 20%;}
+
+<div>
+<p>this is a paragragh</p>
+</div>
+
+2.水平对齐：text-align:left, right, center, justify(两端对齐)
+
+3.字符间隔：word-spacing: px or em; + or -;
+
+4.字母间隔：letter-spaceing: same as word-spacing;
+
+5.字符转换：text-transform: none, uppercase, lowercase, capitalize;
+
+6.文本装饰：text-decoration: none, underline, overline, line-through, blink(文本闪烁)
+
+7.处理空白符：white-space: pre-line, normal, nowrap, pre,pre-wrap;
+
+   值      空白符  换行符  自动换行
+pre-line    合并    保留     允许
+normal      合并    忽略     允许
+nowrap      合并    忽略    不允许
+pre         保留    保留    不允许
+pre-wrap    保留    保留     允许
+
+8.文字风格
+font-sytle: normal, italic(文本斜体）, oblique(文本倾斜）
+
+italic和oblique的区别：
+斜体（italic）是一种简单的字体风格，对每个字母的结构有一些小改动，来反映变化的外观。与此不同，倾斜（oblique）文本则是正常竖直文本的一个倾斜版本。
+
+9.字体变形：font-variant: small-caps;(小型大写字母)
+
+10.字体加粗：font-weight: normal, bold, 900;
+使用 bold 关键字可以将文本设置为粗体。
+关键字 100 ~ 900 为字体指定了 9 级加粗度。如果一个字体内置了这些加粗级别，那么这些数字就直接映射到预定义的级别，100 对应最细的字体变形，900 对应最粗的字体变形。数字 400 等价于 normal，而 700 等价于 bold。
+如果将元素的加粗设置为 bolder，浏览器会设置比所继承值更粗的一个字体加粗。与此相反，关键词 lighter 会导致浏览器将加粗度下移而不是上移。
+
+11.字体大小：font-size: *px;(浏览器默认是16px, 16px=1em)
+body {font-size: 100%;}
+h1 {font-size: 3.75em;}
+h2 {font-size: 2.5em;}
+p {font-size: 0.875em;}
+
+-------------------------------------------------
+链接的四种状态：
+1、a:link -普通的、未被访问的链接
+2、a:visited -用户已访问的链接
+3、a:hover -鼠标指针位于链接的上方（css伪类）
+4、a:active -链接被点击的时刻
+
+当为链接的不同状态设置样式时，请按照以下次序规则：
+a:hover 必须位于 a:link 和 a:visited 之后
+a:active 必须位于 a:hover 之后
+
+------------------------------------------------
+CSS 列表属性(list)
+属性                          描述
+list-style          简写属性。用于把所有用于列表的属性设置于一个声明中。
+list-style-image    将图象设置为列表项标志。
+list-style-position 设置列表中列表项标志的位置。
+list-style-type     设置列表项标志的类型。
+
+list-style-type:
+(ul) disc, circle, square, none; 
+(ol)decimal, decimal-leading-zero, lower-roman, upper-roman, lower-alpha, upper-alpha;
+
+list-style-position：inside; outside;
+
+-------------------------------------
+表格：
+border: 1px solid black;
+border-collapse: collapse(将表格边框折叠为单一边框)
+text-align:left, right, center;
+vertical-align: top, middle, bottom;
+empty-cells: hide;(隐藏空白单元格)
+border-spacing: px(表格之间的空隙)
+caption-side:top, bottom;(表格标题)
+
+CSS 边框属性
+"CSS" 列中的数字指示哪个 CSS 版本定义了该属性。
+属性                    描述    CSS
+outline         在一个声明中设置所有的轮廓属性。    2
+outline-color   设置轮廓的颜色。    2
+outline-style   设置轮廓的样式。    2
+outline-width   设置轮廓的宽度。    2
+
+---------------------------------------------------
+CSS 内边距属性:
+padding         简写属性。作用是在一个声明中设置元素的所内边距属性。
+padding-bottom  设置元素的下内边距。
+padding-left    设置元素的左内边距。
+padding-right   设置元素的右内边距。
+padding-top     设置元素的上内边距。
+
+---------------------------------------------------
+这是因为如果边框样式为 none，即边框根本不存在，那么边框就不可能有宽度，因此边框宽度自动设置为 0，而不论您原先定义的是什么。
+记住这一点非常重要。事实上，忘记声明边框样式是一个常犯的错误。根据以下规则，所有 h1 元素都不会有任何边框，更不用说 20 像素宽了：
+h1 {border-width: 20px;}
+由于 border-style 的默认值是 none，如果没有声明样式，就相当于 border-style: none。因此，如果您希望边框出现，就必须声明一个边框样式。
+
+透明边框：border-color: transparent;
+border-width:thin, medium, thick;
+-------------------------------------------------------------------
+定位：Position
+1.相对定位：relative;(按照元素的原始位置对该元素进行移动)
+2.绝对定位：absolute;(可以放到页面任何位置)
+3.固定定位：fixed;
+
+overflow:scroll(元素内容超出给定宽度和高度属性，overflow可以出现滚动条)
+overflow:hidden（隐藏滚动条)
+overflow:auto
+
+clip:rect(0px 5px 30px 0px) (clip用来改变形状，rect剪切作用）
+
+Z-index: -1(元素放置于另一元素之后)
+
+---------------------------------------------------------------------
+伪类：pseudo-element {property: value;}
+first-child:
+p:first-child {property: value}
+p:nth-child(n) {property: value}
+
+:lang--为不同语言定义特殊规则。
+q:lang(no){ quotes: "~" "~"}
+<p><q lang="no">balabala</q></p>
+
+:first-line 伪元素
+"first-line" 伪元素用于向文本的首行设置特殊样式。
+在下面的例子中，浏览器会根据 "first-line" 伪元素中的样式对 p 元素的第一行文本进行格式化：
+实例
+p:first-line
+{
+color:#ff0000;
+font-variant:small-caps;
+}
+# first-line伪元素只能用于块级元素。以下属性可应用：font, color, background,word-spacing, letter-spacing, text-decoration, vertical-align, text-transform, line-height, clear;
+
+first-letter {color:#ff0000; font-size:xx-large:}(备注：x=x)
+
+:first-letter   向文本的第一个字母添加特殊样式。    
+:first-line 向文本的首行添加特殊样式。  
+:before 在元素之前添加内容。    
+:after  在元素之后添加内容。    
+
+margin: auto(自动对齐）
+
+鼠标变化：style="cursor:text, wait, help, default,auto, Pointer, Move....
+----------------------------------------------------------------------
+clear   设置一个元素的侧面是否允许其他的浮动元素。
+cursor  规定当指向某元素之上时显示的指针类型。
+display 设置是否及如何显示元素。
+float   定义元素在哪个方向浮动。
+position    把元素放置到一个静态的、相对的、绝对的、或固定的位置中。
+visibility  设置元素是否可见或不可见。
+
+--------------------------------------------------------------
+导航：
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+list-style-type:none # 去掉列表符号
+margin:0;
+padding:0; #去除浏览器默认设置，保持统一性
+padding-top: 6px;
+padding-bottom: 6px; #a元素设置内边距，如果ul不设置，内容将溢出
+}
+
+a:link,a:visited {
+display: block;
+font-weight: bold;
+color: #ffffff
+width: 120px;
+background-color: #bebebe; #加背景色显示出链接区域
+text-align: center;
+padding: 6px;
+text-decoration: none;
+text-transform: uppercase;}
+
+a:hover,a:active
+{
+background-color: # cc0000;
+}
+
+li {display: inline;}
+</style>
+</head>
+<body>
+<ul>
+<li><a href="url">Home</a></li>
+<li><a href="url">News</a></li>
+<li><a href="url">Contact</a></li>
+<li><a href="url">About</a></li>
+</ul>
+</body>
+</html>
+
+------------------------------------------------------------------
+除了各种特定的字体系列外，CSS 定义了 5 种通用字体系列：
+Serif 字体:字体成比例，而且上下短线
+Sans-serif 字体：成比例，没有上下短线
+Monospace 字体：不成比例，模拟打字机打出的文本
+Cursive 字体： 模仿手写
+Fantasy 字体： 无法用任何特征来定义
+-------------------------------------------------
+媒介类型：@media screen,print
+all 用于所有的媒介设备。
+aural   用于语音和音频合成器。
+braille 用于盲人用点字法触觉回馈设备。
+embossed    用于分页的盲人用点字法打印机。
+handheld    用于小的手持的设备。
+print   用于打印机。
+projection  用于方案展示，比如幻灯片。
+screen  用于电脑显示器。
+tty 用于使用固定密度字母栅格的媒介，比如电传打字机和终端。
+tv  用于电视机类型的设备。
+
+
