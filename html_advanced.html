@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--DTD类型
+XHTML 1.0 Strict
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+XHTML 1.0 Transitional
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+XHTML 1.0 Frameset
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+-->
+
+<html>
+<head>
+<title>Html advanced</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+p {color: blue}
+h1 {color:blue}
+a:link img {border-style: outset;}
+</style>
+
+<script type="text/javascript">
+function change_header()
+{
+document.getElementById("myHeader").innerHTML="Nice day!";
+}
+</script>
+</head>
+
+<!--
+"&amp;"="&" "&lt;"="<" "&gt;"=">"  ""=&quot; ''=&apos;
+-->
+
+<body>
+<p>对不起，我们已经搬家了。我们新的地址是：<a href="http://www.w3school.com.cn">http://www.w3school.com.cn</a></p>
+
+<p>如果想要自动跳转新的网址，可在head里加入一行：
+&lt;meta http-equiv="Refresh" content="10;url=http:www.w3school.com.cn" /&gt;</p>
+
+<p>
+&lt;title&gt;标签定义文档的标题,title元素在所有HTML/XHTML文档中都是必需的，title元素能够：<ul>
+<li>定义浏览器工具栏中的标题。</li>
+<li>提供页面被添加到收藏夹时显示的标题。</li>
+<li>显示在搜索引擎结果中的页面标题。</li></ul>
+</p>
+
+<p>
+&lt;base&gt;标签为页面上的所有的链接规定默认地址或默认目标（target）:
+&lt;head&gt;
+&lt;base href=&quot;url&quot; /&gt;
+&lt;base target=&quot;_blank&quot; /&gt;
+</p>
+
+<p>&nbsp;</p>
+
+<table border="2">
+<caption>HTML头部元素</caption>
+<tr>
+  <th>标签</th>
+  <th>描述</th>
+</tr>
+<tr>
+  <td>&lt;head&gt;</td>
+  <td>定义关于文档的信息。</td>
+</tr>
+<tr>
+  <td>&lt;title&gt;</td>
+  <td>定义文档标题。</td>
+</tr>
+<tr>
+  <td>&lt;base&gt;</td>
+  <td>定义页面上所有链接的默认地址或默认目标。</td>
+</tr>
+<tr>
+  <td>&lt;link&gt;</td>
+  <td>定义文档与外部资源之间的关系。</td>
+</tr>
+<tr>
+  <td>&lt;meta&gt;</td>
+  <td>定义关于HTML文档的元数据。</td>
+</tr>
+<tr>
+  <td>&lt;script&gt;</td>
+  <td>定义客户端脚本。</td>
+</tr>
+<tr>
+  <td>&lt;style&gt;</td>
+  <td>定义文档的样式信息。</td>
+</tr>
+</table>
+
+<div>
+<h2>HTML 中有用的字符实体</h2>
+<p class="note"><span>注释：</span>实体名称对大小写敏感！</p>
+<table class="dataintable" border="1">
+<tr>
+  <th style="width:20%">显示结果</th>
+  <th style="width:20%">描述</th>
+  <th style="width:30%">实体名称</th>
+  <th style="width:30%">实体编号</th>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>空格</td>
+  <td>&amp;nbsp;</td>
+  <td>&amp;#160;</td>
+</tr>
+<tr>
+  <td>&#60;</td>
+  <td>小于号</td>
+  <td>&amp;lt;</td>
+  <td>&amp;#60;</td>
+</tr>
+<tr>
+  <td>&gt;</td>
+  <td>大于号</td>
+  <td>&amp;gt;</td>
+  <td>&amp;#62;</td>
+</tr>
+<tr>
+  <td>&amp;</td>
+  <td>和号</td>
+  <td>&amp;amp;</td>
+  <td>&amp;#38;</td>
+</tr>
+<tr>
+  <td>&quot;</td>
+  <td>引号</td>
+  <td>&amp;quot;</td>
+  <td>&amp;#34;</td>
+</tr>
+<tr>
+  <td>'</td>
+  <td>撇号&nbsp;</td>
+  <td>&amp;apos; (IE不支持)</td>
+  <td>&amp;#39;</td>
+</tr>
+<tr>
+  <td>￠</td>
+  <td>分</td>
+  <td>&amp;cent;</td>
+  <td>&amp;#162;</td>
+</tr>
+<tr>
+  <td>&pound;</td>
+  <td>镑</td>
+  <td>&amp;pound;</td>
+  <td>&amp;#163;</td>
+</tr>
+<tr>
+  <td>&yen;</td>
+  <td>日圆</td>
+  <td>&amp;yen;</td>
+  <td>&amp;#165;</td>
+</tr>
+<tr>
+  <td>&euro;</td>
+  <td>欧元</td>
+  <td>&amp;euro;</td>
+  <td>&amp;#8364;</td>
+</tr>
+<tr>
+  <td>§</td>
+  <td>小节</td>
+  <td>&amp;sect;</td>
+  <td>&amp;#167;</td>
+</tr>
+<tr>
+  <td>&copy;</td>
+  <td>版权</td>
+  <td>&amp;copy;</td>
+  <td>&amp;#169;</td>
+</tr>
+<tr>
+  <td>&#174;</td>
+  <td>注册商标</td>
+  <td>&amp;reg;</td>
+  <td>&amp;#174;</td>
+</tr>
+<tr>
+  <td>&trade;</td>
+  <td>商标</td>
+  <td>&amp;trade;</td>
+  <td>&amp;#8482;</td>
+</tr>
+<tr>
+  <td>×</td>
+  <td>乘号</td>
+  <td>&amp;times;</td>
+  <td>&amp;#215;</td>
+</tr>
+<tr>
+  <td>÷</td>
+  <td>除号</td>
+  <td>&amp;divide;</td>
+  <td>&amp;#247;</td>
+</tr>
+</table>
+
+</div>
+
+<p>ASCII: American Standard Code for Information Interchage </p>
+
+<audio controls="controls">
+  <source src="file:///home/roger/song.mp3" type="audio/mpeg">
+<embed height="100" width="100" src="file:///home/roger/song.mp3" />
+</audio>
+
+<p>&nbsp;</p>
+
+<p><a href="file:///home/roger/horse.mp3">播放 mp3</a></p>
+<p><a href="file:///home/roger/bird.wav"> 播放 wav</a></p>
+
+<p><strong>使用雅虎播放器是免费的，如需使用它，只需要把这段JavaScript插入网页底部即可：</strong><br />
+&lt;script type="text/javascript" src="http://mediaplayer.yahoo.com/js"&gt;&lt;/script&gt;
+</p>
+
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+
+<p>&nbsp;</p>
+
+<video width="320" height="240" controls="controls">
+  <source src="file:///home/roger/movie.ogg" />
+  <object data="file:///home/roger/movie.ogg" width="320" height="240">
+    <embed width="320" height="240" src="file:///home/roger/movie.ogg" />
+  </object>
+</video>
+
+<p>在&lt;video&gt;里面加上autoplay="autoplay"将会自动播放视频。</p>
+<br />
+
+<embed width="320" height="240" src="w3school.com.cn/i/bookmark.swf" />
+
+<p>
+如何从 HTML 转换到 XHTML<br />
+向每张页面的第一行添加 XHTML &lt;!DOCTYPE&gt;<br />
+向每张页面的 html 元素添加 xmlns 属性<br />
+把所有元素名改为小写<br />
+关闭所有空元素<br />
+把所有属性名改为小写<br />
+为所有属性值加引号<br />
+<textarea rows="10", cols="130">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Title of document</title>
+</head>
+<body>
+......
+</body>
+</html></textarea>
+</p><br />
+
+
+<h1 id="myHeader">Hello World!</h1>
+<button onclick="change_header()">Change text</button>
+
+<p>&nbsp;</p>
+
+<textarea rows="29" cols="130">
+4xx: 客户端错误
+消息:   描述:
+400 Bad Request 服务器未能理解请求。
+401 Unauthorized    被请求的页面需要用户名和密码。
+402 Payment Required    此代码尚无法使用。
+403 Forbidden   对被请求页面的访问被禁止。
+404 Not Found   服务器无法找到被请求的页面。
+405 Method Not Allowed  请求中指定的方法不被允许。
+406 Not Acceptable  服务器生成的响应无法被客户端所接受。
+407 Proxy Authentication Required   用户必须首先使用代理服务器进行验证，这样请求才会被处理。
+408 Request Timeout 请求超出了服务器的等待时间。
+409 Conflict    由于冲突，请求无法被完成。
+410 Gone    被请求的页面不可用。
+411 Length Required "Content-Length" 未被定义。如果无此内容，服务器不会接受请求。
+412 Precondition Failed 请求中的前提条件被服务器评估为失败。
+413 Request Entity Too Large    由于所请求的实体的太大，服务器不会接受请求。
+414 Request-url Too Long    由于url太长，服务器不会接受请求。当post请求被转换为带有很长的查询信息的get请求时，就会发生这种情况。
+415 Unsupported Media Type  由于媒介类型不被支持，服务器不会接受请求。
+416     服务器不能满足客户在请求中指定的Range头。
+417 Expectation Failed   
+5xx: 服务器错误
+消息:   描述:
+500 Internal Server Error   请求未完成。服务器遇到不可预知的情况。
+501 Not Implemented 请求未完成。服务器不支持所请求的功能。
+502 Bad Gateway 请求未完成。服务器从上游服务器收到一个无效的响应。
+503 Service Unavailable 请求未完成。服务器临时过载或当机。
+504 Gateway Timeout 网关超时。
+505 HTTP Version Not Supported  服务器不支持请求中指明的HTTP协议版本。
+</textarea>
+
+<p>&nbsp;</p>
+
+<div style="text-align:center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">大</button>
+    <button onclick="makeNormal()">中</button>
+    <button onclick="makeSmall()">小</button>
+    <br />
+    <video id="video1" width="420" style="margin-top:15px;">
+        <source src="file:///home/roger/mov.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<script type="text/javascript">
+var myVideo=document.getElementById("video1");
+
+function playPause()
+{
+if (myVideo.paused)
+    myVideo.play();
+else
+    myVideo.pause();
+}
+
+function makeBig()
+{
+myVideo.width=560;
+}
+
+function makeNormal()
+{
+myVideo.width=420;
+}
+
+function makeSmall()
+{
+myVideo.width=320;
+}
+</script>
+
+<div align="center" >
+<h1>css框模介绍</h1><img src="css.gif" />
+</div>
+</body>
+</html>

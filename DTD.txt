@@ -1,0 +1,15 @@
+1.XHTML 1.0 Strict
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+2.XHMTL 1.0 Transitional
+<!DOCTYPE html PUBLIC
+"-//w3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-Transitional.dtd">
+
+3 XHTML 1.0 Frameset
+<!DOCTYPE html PUBLIC 
+"-//W3C//DTD XHTML 1.0 frameset//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-Frameset.dtd">
+

@@ -1,0 +1,58 @@
+function appendChild()
+{
+var para=document.createElement("p");
+var node=document.createTextNode("This is a new paragraph");
+para.appendChild(node);
+var element=document.getElementById('div1');
+element.append(para);
+}
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element=document.getElementById("div1");
+element.appendChild(para);
+</script>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element=document.getElementById("div1");
+var child=document.getElementById("p1");
+element.insertBefore(para,child);
+</script>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+删除：
+<script>
+var parent=document.getElementById("div1");
+var child=document.getElementById("p1");
+parent.removeChild(child);
+</script>
+
+替换：
+<script>
+var parent=document.getElementById("div1");
+var child=document.getElementById("p2");
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+parent.replaceChild(para,child);
+</script>

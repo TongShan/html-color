@@ -1,0 +1,85 @@
+阴影效果：
+1、边框：border-shadow: 5px 5px 5px black;
+2、文本：text-shadow: 5px 5px 5px black;
+3、背景图片大小：background-size: px px;
+4、背景图片位置：background-origin(clip):border-center | padding-center; | text-center;
+5、background-repeat: no-repeat;
+6、图片偏移：-webkit-transform: rotate(*deg)
+7、图片做边框：-webkit-border-image:url(url) value value round;(stretch拉伸)
+--------------------------------------
+
+允许对单词进行拆分：p {word-wrap: break-word;}
+
+新的文本属性
+属性    描述    CSS
+hanging-punctuation 规定标点字符是否位于线框之外。 3
+punctuation-trim    规定是否对标点字符进行修剪。    3
+text-align-last 设置如何对齐最后一行或紧挨着强制换行符之前的行。   3
+text-emphasis   向元素的文本应用重点标记以及重点标记的前景色。 3
+text-justify    规定当 text-align 设置为 "justify" 时所使用的对齐方法。 3
+text-outline    规定文本的轮廓。    3
+text-overflow   规定当文本溢出包含元素时发生的事情。   3
+text-shadow 向文本添加阴影。    3
+text-wrap   规定文本的换行规则。    3
+word-break  规定非中日韩文本的换行规则。    3
+word-wrap   允许对长的不可分割的单词进行分割并换行到下一行。   3
+
+=============================================
+自定义字体：
+@font-face
+{
+    font-family: myFirstFont;
+src: url('/example/css3/Sansation_Light.ttf')
+         ,url('/example/css3/Sansation_Light.eot'); /* IE9+ */
+}
+
+@font-face
+{
+    font-family: myFirstFont;
+src: url('/example/css3/Sansation_Bold.ttf')
+         ,url('/example/css3/Sansation_Bold.eot'); /* IE9+ */
+     font-weight:bold;
+}
+
+=======================================
+多列：
+CSS3 创建多列
+column-count 属性规定元素应该被分隔的列数：
+把 div 元素中的文本分隔为三列：
+div
+{
+-moz-column-count:3;    /* Firefox */
+-webkit-column-count:3; /* Safari 和 Chrome */
+column-count:3;
+}
+
+column-gap 属性规定列之间的间隔：
+规定列之间 40 像素的间隔：
+div
+{
+-moz-column-gap:40px;       /* Firefox */
+-webkit-column-gap:40px;    /* Safari 和 Chrome */
+column-gap:40px;
+}
+
+column-rule 属性设置列之间的宽度、样式和颜色规则。
+规定列之间的宽度、样式和颜色规则：
+div
+{
+-moz-column-rule:3px outset #ff0000;    /* Firefox */
+-webkit-column-rule:3px outset #ff0000; /* Safari and Chrome */
+column-rule:3px outset #ff0000;
+}
+
+属性    描述    CSS
+column-count    规定元素应该被分隔的列数。  3
+column-fill 规定如何填充列。    3
+column-gap  规定列之间的间隔。  3
+column-rule 设置所有 column-rule-* 属性的简写属性。    3
+column-rule-color   规定列之间规则的颜色。  3
+column-rule-style   规定列之间规则的样式。  3
+column-rule-width   规定列之间规则的宽度。  3
+column-span 规定元素应该横跨的列数。    3
+column-width    规定列的宽度。  3
+columns 规定设置 column-width 和 column-count 的简写属性。  3
+
